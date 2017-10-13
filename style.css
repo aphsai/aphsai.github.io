@@ -14,3 +14,6 @@ body,html {
   width:500px;
   height:30px;
 }
+audio {
+  display:none;
+}
