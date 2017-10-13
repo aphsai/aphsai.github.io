@@ -1,6 +1,6 @@
 var audio = new Audio();
 audio.src = 'cocoa.mp3';
-audio.controls = true;
+audio.controls = false;
 audio.loop = true;
 audio.autoplay = true;
 
