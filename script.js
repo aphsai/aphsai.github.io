@@ -29,7 +29,7 @@ function frameLooper() {
   bars = 100;
   for (var i = 0; i < bars; i++) {
     bar_x = i * 3;
-    bar_width = 2;
+    bar_width = canvas.width/bars;
     bar_height = -(fbc_array[i] / 2);
     ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
   }
