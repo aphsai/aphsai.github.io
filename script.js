@@ -9,6 +9,7 @@ window.onload = function init() {
   document.getElementById('container').appendChild(audio);
   context = new AudioContext();
   analyzer = context.createAnalyser();
+  analyzer.smoothingTimeConstant = 0.3;
   canvas = document.getElementById('analyzer');
   canvas.setAttribute("width", document.body.getBoundingClientRect().width + "px");
   canvas.setAttribute("height", document.body.getBoundingClientRect().height + "px");
@@ -30,7 +31,7 @@ function frameLooper() {
   for (var i = 0; i < bars; i++) {
     bar_width = canvas.width/bars;
     bar_x = i * bar_width;
-    bar_height = -(fbc_array[i])/255 * canvas.height;
+    bar_height = -(fbc_array[i])/255 * canvas.height * 0.9;
     ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
   }
 }
