@@ -30,8 +30,7 @@ function frameLooper() {
   for (var i = 0; i < bars; i++) {
     bar_width = canvas.width/bars;
     bar_x = i * bar_width;
-    bar_height = -(fbc_array[i] / 2);
-    console.log(fbc_array[i]);
+    bar_height = -(fbc_array[i])/255 * canvas.height;
     ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
   }
 }
