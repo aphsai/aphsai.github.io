@@ -2,7 +2,7 @@ var audio = new Audio();
 audio.src = 'cocoa.mp3';
 audio.loop = true;
 audio.autoplay = true;
-
+audio.setAttribute("style","display:none;");
 var canvas, ctx, source, context, analyzer, fbc_array, bars, bar_x, bar_width, bar_height;
 
 window.onload = function init() {
