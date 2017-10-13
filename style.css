@@ -10,7 +10,3 @@ body,html {
   background-image: url("background.png");
   background-size:cover;
 }
-#analyzer {
-  width:500px;
-  height:30px;
-}
