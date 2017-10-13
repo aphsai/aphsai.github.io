@@ -10,7 +10,9 @@ window.onload = function init() {
   context = new AudioContext();
   analyzer = context.createAnalyser();
   canvas = document.getElementById('analyzer');
-  canvas.setAttribute("style","height:" + document.body.getBoundingClientRect().height + "px; width:" + document.body.getBoundingClientRect().width + "px;");
+  canvas.setAttribute("width", "100%");
+  canvas.setAttribute("height", "100%");
+  // canvas.setAttribute("style","height:" + document.body.getBoundingClientRect().height + "px; width:" + document.body.getBoundingClientRect().width + "px;");
   ctx = canvas.getContext('2d');
 
   source = context.createMediaElementSource(audio);
