@@ -1,3 +1,15 @@
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+* {
+  overflow:hidden;
+}
+
 body,html {
   width:100%;
   height:100%;
@@ -8,8 +20,24 @@ body,html {
   width:100%;
   height:100%;
   background-image: url("background.png");
+  background-position: center;
   background-size:cover;
+  overflow:hidden;
 }
 input {
   position:absolute;
+}
+div {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+.triangle {
+  animation-name:rotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+canvas {
+  z-index:999;
 }
