@@ -40,11 +40,26 @@ div {
   animation-name:rotate;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-
+}
+.square {
+  animation-name:rotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.circle {
+  animation-name:rotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 canvas {
   z-index:999;
 }
 .triParent {
+  overflow:visible;
+}
+.sqParent {
+  overflow:visible;
+}
+.cirParent {
   overflow:visible;
 }
