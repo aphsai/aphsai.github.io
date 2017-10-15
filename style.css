@@ -6,8 +6,13 @@
     transform: rotate(360deg);
   }
 }
-* {
-  overflow:hidden;
+@keyframes move {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
 }
 
 body,html {
@@ -15,6 +20,7 @@ body,html {
   height:100%;
   padding:0;
   margin:0;
+  overflow:hidden;
 }
 #container {
   width:100%;
@@ -28,16 +34,17 @@ input {
   position:absolute;
 }
 div {
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.5s linear;
 }
 .triangle {
   animation-name:rotate;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+
 }
 canvas {
   z-index:999;
+}
+.triParent {
+  overflow:visible;
 }
