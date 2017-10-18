@@ -13,20 +13,23 @@ function createShape(x , y, check, shape) {
   }
    if (shape == "triangle") {
   divShape.setAttribute("style","width: 0; height: 0; border-left: " + 10 * size + "px solid transparent;  border-right: " + 10*size + "px solid transparent; border-bottom:" + size*17 + "px solid #111; position:absolute;")
+    divShape.style.opacity = 0.3 + 0.4 * Math.random();
   divShape.className = "triangle";
 }
 else if (shape == "square") {
-  divShape.setAttribute("style","width: " + 10 * size + "; height: " + 10 * size + "; background-color: #111; position:absolute;")
+  divShape.setAttribute("style","width: " + 5 * size + "; height: " + 5 * size + "; background-color: #111; position:absolute;")
+    divShape.style.opacity = 0.4 + 0.6 * Math.random();
   divShape.className = "square";
 }
 else {
-  divShape.setAttribute("style","width: " + 10 * size + "; height: " + 10 * size + "; border-radius:50%; background-color: #111; position:absolute;")
+  divShape.setAttribute("style","width: " + 60 * size + "; height: " + 60 * size + "; border-radius:50%; background-color: #111; position:absolute;")
+    divShape.style.opacity = 0.1 + 0.2 * Math.random();
   divShape.className = "circle";
 }
   divShape.setAttribute("data-speed", 1/(size/7) * 30);
   divShape.setAttribute("data-hex", '#'+(Math.random()*0xFFFFFF<<0).toString(16));
   divShape.style.animationDuration = 5 * 1/(size/7)  + "s";
-  divShape.style.opacity = 0.1 + 0.8 * Math.random();
+
   divShape.addEventListener("transitionend", function() {
     if (shape == "triangle")
     this.style.borderBottomColor = "#111";
@@ -83,13 +86,13 @@ window.onload = function init() {
   source = context.createMediaElementSource(audio);
   source.connect(analyzer);
   analyzer.connect(context.destination);
-  for (var x = 0; x < 25; x++) {
+  for (var x = 0; x < 20; x++) {
     document.getElementById("container").appendChild(createShape(canvas.width, canvas.height * 1.12, false, "triangle"));
   }
-  for (var x = 0; x < 25; x++) {
+  for (var x = 0; x < 30; x++) {
     document.getElementById("container").appendChild(createShape(canvas.width, canvas.height * 1.12, false, "square"));
   }
-  for (var x = 0; x < 25; x++) {
+  for (var x = 0; x < 10; x++) {
     document.getElementById("container").appendChild(createShape(canvas.width, canvas.height * 1.12, false, "circle"));
   }
   triangles = document.getElementsByClassName("triangle");
@@ -129,17 +132,17 @@ function frameLooper() {
     ctx.fillRect(0, 0, bar_width, bar_height);
   }
 //  console.log(newSum/sum)
-  if (newMidSum/midSum * 100  > 110 ) {
+  if (newMidSum/midSum * 100  > 112 ) {
     for (var x = 0; x < triangles.length; x++) {
           triangles[x].style.borderBottomColor = triangles[x].getAttribute("data-hex");
       }
   }
-  if (newHighSum/highSum * 100 > 110) {
+  if (newHighSum/highSum * 100 > 112) {
     for (var x = 0; x < squares.length; x++) {
         squares[x].style.backgroundColor = squares[x].getAttribute("data-hex");
     }
   }
-  if (newLowSum/lowSum * 100 > 110) {
+  if (newLowSum/lowSum * 100 > 112) {
     for (var x = 0; x < circles.length; x++) {
       circles[x].style.backgroundColor = circles[x].getAttribute("data-hex");
     }
