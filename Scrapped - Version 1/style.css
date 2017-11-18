@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css?family=Lora");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@font-face {
+  font-family: lemon;
+  src: url(Fonts/LemonMilklight.otf); }
+@font-face {
+  font-family: coolvetica;
+  src: url(Fonts/coolvetica.ttf); }
+@-webkit-keyframes pulse {
+  0%, 100% {
+    height: 2px;
+    width: 2px; }
+  50% {
+    height: 5px;
+    width: 5px; } }
+@keyframes pulse {
+  0%, 100% {
+    height: 2px;
+    width: 2px; }
+  50% {
+    height: 5px;
+    width: 5px; } }
+@-webkit-keyframes animatedBackground {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: 100% 0; } }
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0; }
+  to {
+    background-position: 100% 0; } }
+.container {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden; }
+  .container h1 {
+    font-family: lemon;
+    font-size: 5em;
+    text-shadow: 5px 5px 0 #999; }
+  .container p {
+    font-family: 'coolvetica';
+    font-size: 1.8em;
+    padding: 0;
+    margin: 0;
+    text-shadow: 5px 5px 0 #EEEEEE; }
+
+.redBack {
+  background-color: #481219;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.orangeBack {
+  background-color: #6c1b25; }
+
+.funBack {
+  background-color: #54151d; }
+
+.contactBack {
+  background-color: #180608; }
+
+.title {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  z-index: 999;
+  overflow: hidden; }
+
+.title h2 {
+  font-size: 7.0em;
+  text-shadow: 5px 5px 0px #999;
+  font-family: lemon;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 0;
+  cursor: default; }
+
+.navbar {
+  width: 70%;
+  height: 10%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  font-family: lemon;
+  z-index: 999;
+  opacity: 0.6; }
+
+.navbar ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+
+.navbar li {
+  font-size: 2.5em;
+  margin: 1.25%;
+  display: block;
+  float: left;
+  text-shadow: 3px 3px 6px #999;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+  cursor: pointer;
+  /*transition:width .3s;*/ }
+
+.navbar li:hover {
+  color: red;
+  border-bottom: 3px solid #000;
+  opacity: 1; }
+
+.content {
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 65%;
+  font-size: 1.2em; }
+
+.package {
+  margin: 0;
+  padding: 0; }
+
+.pulse {
+  -webkit-animation: pulse 2s infinite;
+          animation: pulse 2s infinite; }
+
+.star {
+  width: 2px;
+  height: 2px;
+  background-color: #ff9999;
+  position: absolute;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+
+.homeBord {
+  background: url("hypnotize.png");
+  -webkit-animation: animatedBackground 50s infinite linear;
+          animation: animatedBackground 50s infinite linear; }
+
+.aboutBord {
+  background: url("memphis-colorful.png");
+  -webkit-animation: animatedBackground 50s infinite linear;
+          animation: animatedBackground 50s infinite linear;
+  -webkit-animation-direction: reverse;
+          animation-direction: reverse; }
+
+.workBord {
+  background: url("pow-star.png");
+  -webkit-animation: animatedBackground 50s infinite linear;
+          animation: animatedBackground 50s infinite linear; }
+
+.funBord {
+  background: url("upfeathers.png");
+  -webkit-animation: animatedBackground 50s infinite linear;
+          animation: animatedBackground 50s infinite linear;
+  -webkit-animation-direction: reverse;
+          animation-direction: reverse; }
+
+.contactBord {
+  background: url("organic-tiles.png");
+  -webkit-animation: animatedBackground 50s infinite linear;
+          animation: animatedBackground 50s infinite linear; }
+
+.border {
+  width: 92%;
+  height: 88%;
+  border: 10px solid #333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: absolute;
+  opacity: 0.35; }
+
+html, body {
+  background-color: #791f2a;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; }
+
+* {
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; }
+
+/*# sourceMappingURL=style.css.map */
