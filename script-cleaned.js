@@ -203,6 +203,7 @@ window.onload = function playTetris()  {
   setInterval(update, 1000/60);
   setInterval(listener, 1000/30);
   setInterval(applyGrav, 1000);
+  var timeoutHandle;
   //set Keylisteners
   window.addEventListener("keyup", keyUp, false);
   window.addEventListener("keydown", keyDown, false);
@@ -445,6 +446,8 @@ window.onload = function playTetris()  {
           orientation = 0;
           currPieceArr = pieces[currPiece][orientation];
         }
+        currPiece_row = 0;
+        currPiece_column = Math.floor((BOARD_WIDTH - pieces[currPiece][orientation].length)/2);
         drawHeld();
       }
     }
@@ -483,30 +486,33 @@ window.onload = function playTetris()  {
       }
     }
     if (apply) {
+      window.clearTimeout(timeoutHandle);
       currPiece_row = potRow;
     }
     else {
-      for (var row = 0; row < currPieceArr.length; row++) {
-        for (var col = 0; col < currPieceArr[row].length; col++) {
-          if (currPieceArr[row][col] > 0)
-          board[currPiece_row + row][currPiece_column + col] = -(currPiece + 1);
-        }
-      }
-      for (var row = 0; row < BOARD_HEIGHT; row++) {
-        var clear = true;
-        for (var col = 0; col < BOARD_WIDTH; col++) {
-          if (board[row][col] == 0) {
-            clear = false;
+      timeoutHandle = window.setTimeout(function() {
+        for (var row = 0; row < currPieceArr.length; row++) {
+          for (var col = 0; col < currPieceArr[row].length; col++) {
+            if (currPieceArr[row][col] > 0)
+            board[currPiece_row + row][currPiece_column + col] = -(currPiece + 1);
           }
         }
-        if (clear) {
-          board.splice(row, 1);
-          board.unshift([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+        for (var row = 0; row < BOARD_HEIGHT; row++) {
+          var clear = true;
+          for (var col = 0; col < BOARD_WIDTH; col++) {
+            if (board[row][col] == 0) {
+              clear = false;
+            }
+          }
+          if (clear) {
+            board.splice(row, 1);
+            board.unshift([0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
+          }
         }
-      }
-      genPiece();
-      shift = false;
-      return true;
+        genPiece();
+        shift = false;
+        return true;
+      }, 500);
     }
   }
   //listener
