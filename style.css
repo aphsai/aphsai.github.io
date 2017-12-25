@@ -1,23 +1,178 @@
-html, body {
-  background-color:#282c34;
+@font-face {
+  font-family:'lemon';
+  src: url("Fonts/LemonMilk.otf");
+}
+@font-face {
+  font-family:'avenir';
+  src: url("Fonts/AvenirLTStd-Black.otf");
+}
+@font-face {
+  font-family: 'avenir-thin';
+  src: url("Fonts/AvenirLTStd-Light.otf");
+}
+@import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans:300,400');
+body, html {
   margin:0;
   padding:0;
+  overflow-x:hidden;
+    background-color:#EEE;
+}
+.navbar {
+  font-family:'lemon';
+  z-index:9999;
+  height:9vh;
+  width:100vw;
+  background-color:#111010;
+  position:absolute;
   display:flex;
+  margin:0;
+  top:0;
+  flex-direction: column;
+  transform:translateZ(-5px);
+}
+.navbar ul {
+  list-style-type: none;
+  align-self: flex-end;
+  width:30%;
+  height:100%;
+  margin-right: 8%;
+  padding: 0;
+  display:flex;
+  justify-content: space-around;
   align-items: center;
+}
+.navbar li {
+  display:inline;
+  color:#c2c0c0;
+  font-size:1.3vw;
+}
+.navbar .selected {
+  border-bottom:1px solid #676565;
+  color:#676565;
+}
+.navbar span {
+  border:1px solid #EEE;
+  border-radius:3px;
+  padding:5px 10px;
+}
+.banner {
+  height:130%;
+  width:15vh;
+  position: absolute;
+  left:15%;
+}
+.banner .banner-body {
+  height:15vh;
+  width:100%;
+  background-color:#262525;
+  display:flex;
   justify-content: center;
 }
-
-canvas {
-  /*border:3px solid #9da5b4;*/
-  border-radius:7px;
-  /*background-color:#21252b;*/
+.banner .banner-tail {
+  width:0;
+  height:0;
+  position: absolute;
+  border-bottom: 7vh solid transparent;
 }
-
-.flex {
+.banner .banner-tail:nth-child(3) {
+  border-right:15vh solid #262525;
+}
+.banner .banner-tail:nth-child(2) {
+  border-left:15vh solid #262525;
+}
+.banner img {
+  width:90%;
+  align-self: flex-end;
+}
+.container {
   display:flex;
-  align-items: flex-start;
-  flex-direction: column;
   flex-wrap:wrap;
-  width:530px;
-  height:700px;
+  width:100vw;
+  height:100vh;
+  background-color:#EEE;
+  justify-content: center;
+}
+.black-body {
+  height:75%;
+  width:100%;
+  background-color:#010101;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center;
+}
+.background-overlay{
+    background-image:url("Images/hypnotize.png");
+    opacity:0.05;
+    width:100%;
+    height:75%;
+    position: absolute;
+    z-index:0;
+}
+.sub-container {
+  margin-top:7%;
+  z-index:1;
+}
+.tagline {
+  font-size:1.0vw;
+  text-align: center;
+  width:100%;
+  font-family: 'avenir-thin';
+  color:#dbdbdb;
+  margin-bottom:8%;
+}
+.information {
+  width:100%;
+  color:#504f4f;
+  text-align: center;
+    font-size:1.2vw;
+}
+.nameTitle {
+  line-height: 50%;
+  color:#7c7979;
+}
+.information h1 {
+  font-family:'avenir';
+}
+.information h3 {
+  font-family:'avenir-thin';
+}
+.information h2 {
+  font-family:'avenir-thin';
+  font-weight:400;
+}
+.white-body {
+  height:25%;
+  width:100%;
+  margin:0;
+  padding:0;
+  text-align: center;
+}
+.white-body img {
+  height:200%;
+  transform:translateY(-50%);
+}
+.content {
+  width:70%;
+}
+.content h1 {
+    font-family: 'avenir';
+}
+.project {
+  background-color:#545c5d;
+  float:left;
+  width:33%;
+  height:100%;
+}
+.content-row:nth-child(2) .project:nth-child(2) {
+  background-color:#123123;
+}
+.content-row:nth-child(3) .project:nth-child(2n + 1) {
+  background-color:#123123;
+}
+.content-row {
+  margin:10px 0;
+  height:auto;
+  width:100%;
+  height:30vh;
 }
