@@ -47,16 +47,27 @@ a {
 .navbar li {
   display:inline;
   color:#c2c0c0;
-  font-size:1.3vw;
+  font-size:1.1vw;
+  transition: 0.3s;
 }
+ul:not(:last-child) li:hover {
+  text-shadow: 0 3px 0 rgba(255,255,255,0.9);
+  color:#111010;
+}
+
 .navbar .selected {
   border-bottom:1px solid #676565;
   color:#676565;
 }
 .navbar span {
   border:1px solid #EEE;
-  border-radius:3px;
-  padding:5px 10px;
+  border-radius:28px;
+  padding:7px 20px;
+  transition:0.3s;
+}
+.navbar span:hover {
+  background-color: #EEE;
+  color:#111010;
 }
 .banner {
   height:130%;
@@ -90,6 +101,7 @@ a {
 .container {
   display:flex;
   flex-wrap:wrap;
+  position:relative;
   width:100vw;
   height:100vh;
   background-color:#EEE;
@@ -103,13 +115,12 @@ a {
   flex-wrap:wrap;
   justify-content: center;
   align-items: center;
-  overflow-y: hidden;
 }
 .background-overlay{
     background-image:url("Images/hypnotize.png");
     opacity:0.05;
     width:100%;
-    height:75%;
+    height:75vh;
     position: absolute;
     top:0;
     z-index:0;
@@ -160,7 +171,7 @@ a {
 }
 .white-body img {
   width:30%;
-  transform:translateY(-60%);
+  transform:translateY(-70%);
 }
 .content {
   width:70%;
@@ -185,6 +196,20 @@ a {
   height:auto;
   width:100%;
   height:30vh;
+}
+.footer {
+  width:100%;
+  height:80px;
+  background-color:#010101;
+  display:flex;
+  flex-direction:column;
+  align-items: flex-end;
+  font-family:'lemon';
+  justify-content: center;
+  color:#333;
+}
+.footer h3 {
+  padding-right:20px;
 }
 @media screen and (max-width: 880px) {
   .project {
