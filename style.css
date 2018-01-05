@@ -16,6 +16,9 @@ body, html {
   overflow-x:hidden;
     background-color:#EEE;
 }
+a {
+  text-decoration: none;
+}
 .navbar {
   font-family:'lemon';
   z-index:9999;
@@ -156,7 +159,7 @@ body, html {
 }
 .white-body img {
   width:30%;
-  transform:translateY(-50%);
+  transform:translateY(-60%);
 }
 .content {
   width:70%;
@@ -205,6 +208,12 @@ body, html {
   .nameTitle h1 {
     line-height: 80%;
     font-size:25px;
+    border-bottom: 1px solid transparent;
+    margin-bottom:5px;
+  }
+  .nameTitle h3 {
+    margin-top:5px;
+    font-size:20px;
   }
   .leftField, .rightField {
     display:none;
