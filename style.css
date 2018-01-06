@@ -37,7 +37,7 @@ a {
   margin:0;
   top:0;
   flex-direction: column;
-  transform:translateZ(-5px);
+  position: absolute;
 }
 .navbar ul {
   list-style-type: none;
