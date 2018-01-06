@@ -25,7 +25,17 @@
         <div class= "banner-tail"></div>
       </div>
       <ul>
-        <a href="javascript:void(0);" class="icon" id="menubtn"> <li><span> &#9776;      </span> </li> </a>
+        <a onclick="response()" class="icon" id="menubtn"> <li><span> &#9776;      </span> </li> </a>
+        <script>
+        function response() {
+          var x = document.getElementById("nav");
+          if (x.className === "navbar") {
+              x.className += " responsive";
+          } else {
+              x.className = "navbar";
+          }
+        }
+        </script>
         <a href="#projects"> <li><span> PROJECTS       </span></li> </a>
         <a href="Images/resume - 2.pdf"> <li> <span>RESUME       </span></li> </a>
         <a href="#">
