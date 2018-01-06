@@ -1,4 +1,5 @@
 window.onload = function setup() {
+  document.getElementById("menubtn").onclick = response();
   function response() {
     var x = document.getElementById("nav");
     if (x.className === "navbar") {
