@@ -40,7 +40,7 @@ a {
   float:right;
   color:#c2c0c0;
   font-size:1.1vw;
-  transition: 0.3s;
+  transition:text-shadow 0.3s;
   padding-right:30px;
   line-height: 5vw;
   height:100%;
@@ -260,6 +260,7 @@ a:hover {
   .navbar a:not(:first-child) {
     display: none;
         font-size: 15px;
+        height:0px;
   }
   .navbar a.icon {
     float: right;
@@ -275,6 +276,7 @@ a:hover {
     display: block;
     text-align: right;
     background-color:#111010;
+    height:60px;
   }
   .navbar a:nth-of-type(2) {
     border:none;
