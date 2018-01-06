@@ -285,7 +285,7 @@ ul:nth-child(3):hover {
   .navbar a {
     display:none;
   }
-  .navbar a:first-child {
+  #nav a:first-child {
     display:flex;
     height:60px;
     width:100%;
@@ -293,15 +293,15 @@ ul:nth-child(3):hover {
     justify-content: center;
     align-items: flex-end;
   }
-  .navbar .icon {
+  #nav .icon {
     display:block;
     float:right;
     height:45px;
   }
-  .navbar.responsive {
+  #nav.responsive {
     position: relative;
   }
-   .navbar.responsive li {
+   #nav.responsive li {
      display:flex;
      align-items: flex-end;
      flex-direction: column;
@@ -313,7 +313,7 @@ ul:nth-child(3):hover {
      padding-right:20px;
      border:none !important;
    }
- .navbar.responsive a {
+ #nav.responsive a {
      background-color: #111010;
      float: right;
      display:block;
