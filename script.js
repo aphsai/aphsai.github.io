@@ -1,5 +1,4 @@
 window.onload = function setup() {
-  document.getElementById("menubtn").onclick = response();
   function response() {
     var x = document.getElementById("nav");
     if (x.className === "navbar") {
@@ -8,4 +7,5 @@ window.onload = function setup() {
         x.className = "navbar";
     }
   }
+    document.getElementById("menubtn").onclick = response();
 }
