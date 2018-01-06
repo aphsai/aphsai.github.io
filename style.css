@@ -308,8 +308,6 @@ ul:nth-child(3):hover {
      justify-content: center;
      width:100%;
      height:100%;
-     margin-right: 20px;
-          padding-right:40px;
    }
    .navbar span {
      padding-right:20px;
@@ -319,12 +317,8 @@ ul:nth-child(3):hover {
      background-color: #111010;
      float: right;
      display:block;
-     text-align: right;
      height:60px;
      width:100%;
-   }
-   .navbar.responsive a:last-child {
-     background-color:#111;
    }
 }
 @media screen and (max-width: 700px) {
