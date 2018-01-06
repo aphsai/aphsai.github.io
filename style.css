@@ -67,15 +67,18 @@ ul:nth-child(3):hover {
   border-bottom:1px solid #676565;
   color:#676565;
 }
-.navbar span {
+.navbar .button {
   border:1px solid #EEE;
   border-radius:28px;
   padding:7px 20px;
   transition:0.3s;
 }
-.navbar span:hover {
+.navbar .button:hover {
   background-color: #EEE;
   color:#111010;
+}
+.navbar .icon {
+  display:none;
 }
 .banner {
   height:130%;
@@ -220,6 +223,36 @@ ul:nth-child(3):hover {
 .footer h3 {
   padding-right:20px;
 }
+@media screen and (max-width: 1200px) {
+  .navbar {
+    height:60px;
+  }
+  .banner {
+    height:70px;
+    width:60px;
+    position: absolute;
+    left:15%;
+  }
+  .banner .banner-body {
+    height:70px;
+    width:100%;
+    background-color:#262525;
+    display:flex;
+    justify-content: center;
+  }
+  .banner .banner-tail {
+    width:0;
+    height:0;
+    position: absolute;
+    border-bottom: 3vw solid transparent;
+  }
+  .banner .banner-tail:nth-child(3) {
+    border-right:60px solid #262525;
+  }
+  .banner .banner-tail:nth-child(2) {
+    border-left:60px solid #262525;
+  }
+}
 @media screen and (max-width: 880px) {
   .project {
     width:50%;
@@ -235,9 +268,68 @@ ul:nth-child(3):hover {
   .banner {
     left:15%;
   }
+  .navbar li {
+    font-size:10px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .navbar {
+    display:block;
+  }
+  .navbar ul {
+    display:block;
+    float:right;
+    width:100%;
+    padding:0;
+    margin:0;
+  }
+  .navbar a {
+    display:none;
+  }
+  .navbar a:first-child {
+    display:flex;
+    height:60px;
+    width:100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .navbar .icon {
+    display:block;
+    float:right;
+    height:45px;
+  }
+  .navbar.responsive {
+    position: relative;
+  }
+   .navbar.responsive li {
+     display:flex;
+     align-items: flex-end;
+     flex-direction: column;
+     justify-content: center;
+     width:100%;
+     height:100%;
+     margin-right: 20px;
+          padding-right:40px;
+   }
+   .navbar span {
+     padding-right:20px;
+     border:none !important;
+   }
+ .navbar.responsive a {
+     background-color: #111010;
+     float: right;
+     display:block;
+     text-align: right;
+     height:60px;
+     width:100%;
+   }
+   .navbar.responsive a:last-child {
+     background-color:#111;
+   }
 }
 @media screen and (max-width: 700px) {
-  
+
 }
 @media screen and (max-width: 520px) {
   .footer {
