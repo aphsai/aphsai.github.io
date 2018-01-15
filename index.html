@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width" />
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/manifest.json">
-    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#333333">
-    <!-- Stylesheet -->
-    <link href="style.css" rel="stylesheet">
-    <!-- Javascript -->
-    <script src="script.js"></script>
-    <title> Saksham Aggarwal </title>
-  </head>
-  <body>
-    <div class="navbar" id="nav">
-      <div class="banner">
-        <div class="banner-body">
-          <img src="Images/Logo - White.svg">
-        </div>
-        <div class= "banner-tail"></div>
-        <div class= "banner-tail"></div>
+<head>
+  <meta name="viewport" content="width=device-width" />
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/manifest.json">
+  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="theme-color" content="#333333">
+  <!-- Stylesheet -->
+  <link href="style.css" rel="stylesheet">
+  <!-- Javascript -->
+  <!-- <script src="script.js"></script> -->
+  <title> Saksham Aggarwal </title>
+</head>
+<body>
+  <div class="navbar" id="nav">
+    <div class="banner">
+      <div class="banner-body">
+        <img src="Images/Logo - White.svg">
       </div>
+      <div class= "banner-tail"></div>
+      <div class= "banner-tail"></div>
+    </div>
 
-        <a onclick="response()" class="icon" id="menubtn"> <span> &#9776;</span> </a>
-        <script>
-        function response() {
-          var x = document.getElementById("nav");
-          if (x.className === "navbar") {
-              x.className += " responsive";
-          } else {
-              x.className = "navbar";
-          }
-        }
-        </script>
-                <a href="#"><span class="button">CONTACT</span></a>
-                        <a href="Images/resume - 2.pdf"> <span>RESUME<span> </a>
-        <a href="#projects"> <span> PROJECTS</span> </a>
+    <a onclick="response()" class="icon" id="menubtn"> <span> &#9776;</span> </a>
+    <script>
+    function response() {
+      var x = document.getElementById("nav");
+      if (x.className === "navbar") {
+        x.className += " responsive";
+      } else {
+        x.className = "navbar";
+      }
+    }
+    </script>
+    <a href="mailto:s27aggar@edu.uwaterloo.ca?subject=(Website)"><span class="button">CONTACT</span></a>
+    <a href="Images/resume - 2.pdf"> <span>RESUME<span> </a>
+      <a href="#projects"> <span> PROJECTS</span> </a>
     </div>
     <div class="container">
       <div class="black-body">
@@ -59,9 +59,9 @@
       </div>
       <div class="white-body">
         <!-- <div class="battle"> -->
-          <img class="in leftField" src="Images/LeftSide.png">
-          <img class="in centerField" src="Images/Desk-Sprite.png">
-          <img class="in rightField" src="Images/RightSide.png">
+        <img class="in leftField" src="Images/LeftSide.png">
+        <img class="in centerField" src="Images/Desk-Sprite.png">
+        <img class="in rightField" src="Images/RightSide.png">
         <!-- </div> -->
       </div>
     </div>
@@ -69,9 +69,9 @@
       <div class="content">
         <h1 id="projects"> PROJECTS </h1>
         <div class="content-row">
-          <div class="project"> </div>
-          <div class="project"> </div>
-          <div class="project"> </div>
+          <a href="https://github.com/Aphsai/audiovisualizer"> <div class="project"><div class="mask"> <h2> Audio Visualizer </h2> </div> </div> </a>
+          <a href="https://github.com/Aphsai/Tone-Box"> <div class="project"><div class="mask"> <h2> Tone Box </h2> </div> </div>  </a>
+          <a href="https://github.com/Aphsai/Tetris"> <div class="project">  <div class="mask"> <h2> Tetris </h2></div> </div></a>
         </div>
         <div class="content-row">
           <div class="project"> </div>
@@ -84,4 +84,4 @@
       <h3> © 2017 Saksham Aggarwal - All Rights Reserved </h3>
     </div>
   </body>
-</html>
+  </html>
