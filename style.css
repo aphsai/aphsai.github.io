@@ -205,7 +205,7 @@ a:hover {
   font-family: 'avenir';
   color:#EEE;
 }
-.content-row:nth-child(2) a .project {
+.content-row a .project {
   background-position:center;
   background-size:cover;
 }
