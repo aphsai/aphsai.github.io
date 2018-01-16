@@ -218,7 +218,7 @@ a:hover {
 .content-row:nth-child(2) a:nth-child(3) .project {
   background-image:url("Images/tetris - multiplayer.png");
 }
-.content-row:nth-child(3) a:nth-child(1) {
+.content-row:nth-child(3) a:nth-child(1) .project {
   background-image:url("Images/competitive.png");
 }
 .content-row {
