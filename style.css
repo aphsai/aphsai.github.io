@@ -295,6 +295,12 @@ a:hover {
   }
 }
 @media screen and (max-width: 640px) {
+  .navbar .button {
+    border:none;
+  }
+  .navbar .button:hover {
+    
+  }
   .navbar a:not(:first-of-type) {
     transition:all 1s;
     height:0px;
