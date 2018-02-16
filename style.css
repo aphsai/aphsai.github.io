@@ -224,6 +224,9 @@ a:hover {
 .content-row:nth-child(3) a:nth-child(2) .project {
   background-image:url("Images/competitive.png");
 }
+.content-row:nth-child(3) a:nth-child(3) .project {
+  background-image:url("Images/todolist.png");
+}
 .content-row {
   margin:10px 0;
   height:auto;
@@ -299,7 +302,7 @@ a:hover {
     border:none;
   }
   .navbar .button:hover {
-    
+
   }
   .navbar a:not(:first-of-type) {
     transition:all 1s;
