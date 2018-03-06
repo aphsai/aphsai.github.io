@@ -104,6 +104,10 @@ a:hover {
   background-color:#EEE;
   justify-content: center;
 }
+.containerAuto {
+  height:auto;
+  margin-bottom: 40px;
+}
 .black-body {
   height:75%;
   width:100%;
@@ -211,13 +215,13 @@ a:hover {
   background-size:cover;
 }
 .content-row:nth-child(2) a:nth-child(1) .project {
-  background-image:url("Images/audio visualizer.png");
+  background-image:url("Images/puppr.png");
 }
 .content-row:nth-child(2) a:nth-child(2) .project {
-  background-image:url("Images/tone box.png");
+  background-image:url("Images/restarant.png");
 }
 .content-row:nth-child(2) a:nth-child(3) .project {
-  background-image:url("Images/tetris - multiplayer.png");
+  background-image:url("Images/digit.png");
 }
 .content-row:nth-child(3) a:nth-child(1) .project {
   background-image:url("Images/target.png");
@@ -227,6 +231,15 @@ a:hover {
 }
 .content-row:nth-child(3) a:nth-child(3) .project {
   background-image:url("Images/todolist.png");
+}
+.content-row:nth-child(4) a:nth-child(1) .project {
+  background-image:url("Images/audio visualizer.png");
+}
+.content-row:nth-child(4) a:nth-child(2) .project {
+  background-image:url("Images/tone box.png");
+}
+.content-row:nth-child(4) a:nth-child(3) .project {
+  background-image:url("Images/tetris - multiplayer.png");
 }
 .content-row {
   margin:10px 0;
@@ -511,4 +524,11 @@ a:hover {
   .content-row:last-child {
     margin-bottom:20px;
   }
+}
+
+@media  screen and (max-height: 1100px) {
+  .sub-container {
+    margin-top:3%;
+  }
+
 }
