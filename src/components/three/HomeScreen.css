@@ -1,0 +1,87 @@
+@keyframes slide-border {
+    from { width: 0%; }
+    to { width: 40%; }
+}
+
+body, html, #root {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #111111;
+    overflow: hidden;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: middle;
+    color: #AAAAAA;
+}
+
+#main-top, #main-bottom {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+}
+
+#main-bottom {
+    align-self: end;
+    justify-content: flex-start;
+    transform-origin: 100% 0%;
+}
+
+#main-top {
+    justify-content: flex-end;
+}
+
+#main-top:after, #main-bottom:before {
+    content: "";
+    display: block;
+    width: 0%;
+    animation: slide-border 2s linear 0s forwards;
+    position: absolute;
+}
+
+#main-top:after {
+    align-self: start;
+    border-bottom: 1px solid #222222;
+}
+
+#main-bottom:before {
+    align-self: end;
+    border-top: 1px solid #222222;
+}
+
+
+.title-font {
+    margin: 0;
+    font-family: 'Crimson Text', serif;
+}
+
+.name-bottom {
+    transform: translate(0, -50%);
+}
+
+.name-top {
+    transform: translate(0, 50%);
+}
+
+.slidecontainer1 {
+    position: absolute;
+    top: 100px;
+}
+.slidecontainer2 {
+    position: absolute;
+    top: 150px;
+}
+.slidecontainer3 {
+    position: absolute;
+    top: 200px;
+}
