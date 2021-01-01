@@ -10,7 +10,8 @@ export default class App extends Component {
 
         this.state = {
             navbar_selected: NAVBAR.HOME,
-            transition: TRANSITION.CENTER
+            transition: TRANSITION.CENTER,
+            display_content: true
         };
     }
 
@@ -18,6 +19,7 @@ export default class App extends Component {
 
         let text = e.target.innerText;
         let transition = this.state.transition;
+        let display_content = true;
 
         if (text === NAVBAR.ABOUT) {
             transition = TRANSITION.UP;
@@ -29,19 +31,67 @@ export default class App extends Component {
             transition = TRANSITION.CENTER;
         }
 
+        if (text !== this.state.navbar_selected) {
+            display_content = false;
+        }
+
         this.setState({
             navbar_selected: text,
-            transition: transition
+            transition: transition,
+            display_content: display_content
+        });
+    }
+
+    contentReadyToDisplay = (isReady) => {
+        this.setState({
+            display_content: isReady
         });
     }
 
 
 
     render() {
+        let content = "";
+
+        if (this.state.display_content) {
+            switch(this.state.navbar_selected) {
+                case NAVBAR.HOME:
+                    content = 
+                        <span> 
+                            <h1 id="name"> saksham aggarwal </h1> 
+                        </span>
+                break;
+                case NAVBAR.ABOUT:
+                    content = 
+                        <div id="about" className="container">
+                            <h1> hi, </h1>  
+                            <p> this is nice </p>
+                        </div>
+                break;
+                case NAVBAR.EXPERIENCE:
+                    content = 
+                        <div id="experience" className="container">
+                            <h1> heres where ive worked </h1>
+                            <p> work 1 </p>
+                            <p> work 2 </p>
+                            <p> work 3 </p>
+                        </div>
+
+                break;
+                case NAVBAR.PROJECTS:
+                    content = 
+                        <div id="projects" className="container">
+                            <h1> heres some stuff ive done </h1>
+                        </div>
+                break;
+            }
+        }
+
         return (
             <div id="main-container">
                 <HomeScreen 
                     transition = { this.state.transition }
+                    contentReadyToDisplay = { this.contentReadyToDisplay }
                 />
                 <div id="main-overlay" className="title-font">
                     <div id="navbar-container">
@@ -54,11 +104,9 @@ export default class App extends Component {
                             <li> resume </li>
                         </ul>
                     </div>
-                    <div id="title-container">
-                        <span>
-                            <h1> saksham aggarwal </h1>
-                        </span>
-                    </div>
+                        <div id="content-container">
+                            { content }
+                        </div>
                 </div>
             </div>
         );
