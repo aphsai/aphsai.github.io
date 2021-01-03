@@ -43,6 +43,7 @@ export default class HomeScreen extends Component {
 
         this.camera_radius = 5;
         this.horizontal_angle = 0;
+        this.lerp_speed = 0.1;
 
         this.scene = new THREE.Scene();
         this.clock = new THREE.Clock();
@@ -165,7 +166,7 @@ export default class HomeScreen extends Component {
     animate = () => {
         if (this.target_position) {
         
-            this.camera_position.lerp(this.target_position, 0.1);
+            this.camera_position.lerp(this.target_position, this.lerp_speed);
             
             // Clamp if both X and Z are less than 2
             this.copy_position = this.camera_position.clone();
@@ -179,7 +180,7 @@ export default class HomeScreen extends Component {
             let is_close = this.isClose(this.camera.position, this.target_position);
 
             if (this.props.transition !== TRANSITION.CENTER) {
-                if (is_close) {
+                if (is_close && !this.props.display_content) {
                     this.props.contentReadyToDisplay(true);
                 }
             }
@@ -201,10 +202,12 @@ export default class HomeScreen extends Component {
     }
 
     componentDidUpdate = () => {
+        this.lerp_speed = 0.05;
         if (this.props.transition === TRANSITION.LEFT) {
             this.target_position = new THREE.Vector3(-12, 2.5, this.camera_radius - 3);
         } else if (this.props.transition === TRANSITION.CENTER) {
             this.target_position = new THREE.Vector3(0, 1, this.camera_radius);
+            this.lerp_speed = 0.1;
         } else if (this.props.transition === TRANSITION.RIGHT) {
             this.target_position = new THREE.Vector3(12, 2.5, this.camera_radius - 3);
         } else if (this.props.transition === TRANSITION.UP) {

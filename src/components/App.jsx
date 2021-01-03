@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import HomeScreen from './three/HomeScreen'
 import { NAVBAR, TRANSITION } from './constants'
+import HomeScreen from './three/HomeScreen'
+
+import About from './pages/About'
+import Projects from './pages/Projects'
 import './App.css';
 
 
@@ -17,9 +20,18 @@ export default class App extends Component {
 
     navbarClick = (e) => {
 
+
         let text = e.target.innerText;
         let transition = this.state.transition;
         let display_content = true;
+
+
+
+        if (text !== this.state.navbar_selected) {
+            display_content = false;
+        } else {
+            return;
+        }
 
         if (text === NAVBAR.ABOUT) {
             transition = TRANSITION.UP;
@@ -29,10 +41,7 @@ export default class App extends Component {
             transition = TRANSITION.RIGHT;
         } else if (text === NAVBAR.HOME) {
             transition = TRANSITION.CENTER;
-        }
-
-        if (text !== this.state.navbar_selected) {
-            display_content = false;
+            display_content = true;
         }
 
         this.setState({
@@ -52,21 +61,17 @@ export default class App extends Component {
 
     render() {
         let content = "";
-
+        console.log(this.state.navbar_selected);
         if (this.state.display_content) {
             switch(this.state.navbar_selected) {
                 case NAVBAR.HOME:
                     content = 
-                        <span> 
+                        <span className="stylized-border"> 
                             <h1 id="name"> saksham aggarwal </h1> 
                         </span>
                 break;
                 case NAVBAR.ABOUT:
-                    content = 
-                        <div id="about" className="container">
-                            <h1> hi, </h1>  
-                            <p> this is nice </p>
-                        </div>
+                    content = <About />
                 break;
                 case NAVBAR.EXPERIENCE:
                     content = 
@@ -79,19 +84,22 @@ export default class App extends Component {
 
                 break;
                 case NAVBAR.PROJECTS:
-                    content = 
-                        <div id="projects" className="container">
-                            <h1> heres some stuff ive done </h1>
-                        </div>
+                    content = <Projects />
+                break;
+                default:
+                    content = ""
                 break;
             }
         }
+
+        console.log(content);
 
         return (
             <div id="main-container">
                 <HomeScreen 
                     transition = { this.state.transition }
                     contentReadyToDisplay = { this.contentReadyToDisplay }
+                    contentDisplaying = { this.state.display_content }
                 />
                 <div id="main-overlay" className="title-font">
                     <div id="navbar-container">
@@ -104,9 +112,9 @@ export default class App extends Component {
                             <li> resume </li>
                         </ul>
                     </div>
-                        <div id="content-container">
-                            { content }
-                        </div>
+                    <div id="content-container">
+                        { content }
+                    </div>
                 </div>
             </div>
         );
