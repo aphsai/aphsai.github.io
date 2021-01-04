@@ -28,3 +28,10 @@
     border-radius: 50%;
     box-shadow: 0px 0px 10px #777;
 }
+
+@media screen and (max-width: 850px) {
+    #about-content-container {
+        width: 100%;
+        overflow: scroll;
+    }
+}   

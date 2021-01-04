@@ -22,6 +22,10 @@ body, html, #root {
     text-decoration: underline;
 }
 
+.emphasis {
+    font-weight: bold;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -82,9 +86,6 @@ a {
     position: relative;
 }
 
-.emphasis {
-    font-weight: bold;
-}
 
 #experience {
     background-color: #FFFFFF;
@@ -116,6 +117,10 @@ a {
     right: -20px;
     border-right: 5px solid #222222;
     border-top: 5px solid #222222;
+}
+
+.stylized-border {
+    text-align: center;
 }
 
 #name:before {
@@ -166,6 +171,60 @@ ul#navbar #navbar_selected {
     color: #CCCCCC;
 }
 
+#navbar-container .icon {
+    display: none;
+}
+
 #logo {
     flex-grow: 1;
+}
+
+@media screen and (max-width: 1000px) {
+    .stylized-border:before, .stylized-border:after, #name:before, #name:after {
+        display: block;
+        content: "";
+        width: 0px;
+        height: 0px;
+        display: none;
+        position: absolute;
+    }
+
+    #name {
+        font-size: 10vw;
+    }
+
+    h1#name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: middle;
+    }
+}   
+
+@media screen and (max-width: 500px) {
+
+    ul#navbar li:not(:first-child) { 
+        display: none;
+    }
+
+    #navbar-container .icon {
+        position: absolute; 
+        right: 40px;
+        top: 35px;
+        display: block;
+        cursor: pointer;
+        z-index: 999999;
+    }
+    
+    .display {
+        flex-direction: column;
+        z-index: 999999;
+        width: 100%;
+    }
+
+    .display li:not(:first-child) { 
+        display: block !important;
+        margin: 5px 0;
+    }
+
 }

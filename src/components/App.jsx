@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+
+
 import { NAVBAR, TRANSITION } from './constants'
 import HomeScreen from './three/HomeScreen'
-
 import About from './pages/About'
 import Projects from './pages/Projects'
+import Experience from './pages/Experience'
 import './App.css';
 
 
@@ -14,7 +18,8 @@ export default class App extends Component {
         this.state = {
             navbar_selected: NAVBAR.HOME,
             transition: TRANSITION.CENTER,
-            display_content: true
+            display_content: true,
+            navbar_state: ""
         };
     }
 
@@ -58,10 +63,15 @@ export default class App extends Component {
     }
 
 
+    toggle_navbar = () => {
+        this.setState({
+            navbar_state: this.state.navbar_state ? "" : "display"
+        });
+    }
+
 
     render() {
         let content = "";
-        console.log(this.state.navbar_selected);
         if (this.state.display_content) {
             switch(this.state.navbar_selected) {
                 case NAVBAR.HOME:
@@ -74,14 +84,7 @@ export default class App extends Component {
                     content = <About />
                 break;
                 case NAVBAR.EXPERIENCE:
-                    content = 
-                        <div id="experience" className="container">
-                            <h1> heres where ive worked </h1>
-                            <p> work 1 </p>
-                            <p> work 2 </p>
-                            <p> work 3 </p>
-                        </div>
-
+                    content = <Experience />
                 break;
                 case NAVBAR.PROJECTS:
                     content = <Projects />
@@ -92,8 +95,6 @@ export default class App extends Component {
             }
         }
 
-        console.log(content);
-
         return (
             <div id="main-container">
                 <HomeScreen 
@@ -103,14 +104,17 @@ export default class App extends Component {
                 />
                 <div id="main-overlay" className="title-font">
                     <div id="navbar-container">
-                        <ul id="navbar">
+                        <ul id="navbar" className= { this.state.navbar_state } >
+                            <li className="icon" onClick={ this.toggle_navbar }>
+                                <FontAwesomeIcon icon={faBars} />
+                            </li>
                             {
                                 Object.values(NAVBAR).map ((str) => {
                                         return <li key={str} onClick={ this.navbarClick } id={this.state.navbar_selected === str ? "navbar_selected" : ""}> {str} </li>
                                 })
                             }
                             <li> resume </li>
-                        </ul>
+                        </ul> 
                     </div>
                     <div id="content-container">
                         { content }

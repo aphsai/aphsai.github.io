@@ -19,6 +19,7 @@ export default class HomeScreen extends Component {
     constructor(props) {
         super(props);
         document.addEventListener('mousemove', this._onMouseMove);
+        window.addEventListener('resize', this.onWindowResize);
     }
 
     _onMouseMove = (e) => {
@@ -147,10 +148,12 @@ export default class HomeScreen extends Component {
     }
 
     onWindowResize = () => {
-	    this.camera.aspect = window.innerWidth / window.innerHeight;
-	    this.renderer.setSize(window.innerWidth, window.innerHeight);
-	    this.composer.setSize(window.innerWidth, window.innerHeight);
-	    this.camera.updateProjectionMatrix();
+        if (this.renderer) this.renderer.setSize(window.innerWidth, window.innerHeight);
+        if (this.composer) this.composer.setSize(window.innerWidth, window.innerHeight);
+        if (this.camera) {
+            this.camera.aspect = window.innerWidth / window.innerHeight;
+            this.camera.updateProjectionMatrix();
+        }
 	}
 
     start = () => {
@@ -198,11 +201,12 @@ export default class HomeScreen extends Component {
 
     componentWillUnmount() {
         document.removeEventListener('mousemove', this._onMouseMove);
+        window.removeEventListener('resize', this.onWindowResize);
         this.stop();
     }
 
     componentDidUpdate = () => {
-        this.lerp_speed = 0.05;
+        this.lerp_speed = 0.03;
         if (this.props.transition === TRANSITION.LEFT) {
             this.target_position = new THREE.Vector3(-12, 2.5, this.camera_radius - 3);
         } else if (this.props.transition === TRANSITION.CENTER) {
