@@ -8,9 +8,9 @@ const experiences = [
         position: "software developer",
         date: "sep. 2020 - dec. 2020",
         work: [
-            "constructed api to automate jupyter notebook execution by parameterizing inputs and outputs",
-            "developed machine learning model to predict menu and quantity of meals for new sites, decreasing waste by 12",
-            "created and implemented experimental recipes workflow by automating a/b testing to sites"
+            "constructed api to automate jupyter notebook execution by parameterizing inputs and outputs, as well as synchronize data with s3 buckets",
+            "developed several onboarding enhancements such as location-based signup, customizeable surveys and push notifications along with emails",
+            "revamped workflow for experimental recipes to allow for extensibility and increased clarity"
         ]
     },
     {
@@ -48,7 +48,7 @@ const experiences = [
 export default class Experience extends Component {
     render() {
         return (
-            <div id="experience" className="container">
+            <div id="experience" className="container" style={ fadeIn }>
                 {
                     experiences.map((experience) => {
                         return <div className="company"> 
@@ -64,7 +64,7 @@ export default class Experience extends Component {
                                          })
                                      }
                                     </ul>
-                                    </div>
+                                </div>
                         </div>
                     })
                 }

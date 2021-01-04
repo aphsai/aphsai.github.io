@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
-
 import { NAVBAR, TRANSITION } from './constants'
 import HomeScreen from './three/HomeScreen'
 import About from './pages/About'
 import Projects from './pages/Projects'
 import Experience from './pages/Experience'
-import './App.css';
+import resume from '../assets/resume/resume.pdf'
+import './App.css'
 
 
 export default class App extends Component {
@@ -25,12 +25,9 @@ export default class App extends Component {
 
     navbarClick = (e) => {
 
-
         let text = e.target.innerText;
         let transition = this.state.transition;
         let display_content = true;
-
-
 
         if (text !== this.state.navbar_selected) {
             display_content = false;
@@ -113,7 +110,7 @@ export default class App extends Component {
                                         return <li key={str} onClick={ this.navbarClick } id={this.state.navbar_selected === str ? "navbar_selected" : ""}> {str} </li>
                                 })
                             }
-                            <li> resume </li>
+                            <li> <a src={ resume } target="_blank"> resume </a> </li>
                         </ul> 
                     </div>
                     <div id="content-container">
