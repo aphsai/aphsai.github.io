@@ -110,7 +110,7 @@ export default class App extends Component {
                                         return <li key={str} onClick={ this.navbarClick } id={this.state.navbar_selected === str ? "navbar_selected" : ""}> {str} </li>
                                 })
                             }
-                            <li> <a src={ resume } target="_blank"> resume </a> </li>
+                            <li> <a href={ resume } target="_blank" rel="noreferrer"> resume </a> </li>
                         </ul> 
                     </div>
                     <div id="content-container">

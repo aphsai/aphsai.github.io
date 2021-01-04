@@ -48,7 +48,7 @@ const experiences = [
 export default class Experience extends Component {
     render() {
         return (
-            <div id="experience" className="container" style={ fadeIn }>
+            <div id="experience" className="container">
                 {
                     experiences.map((experience) => {
                         return <div className="company"> 

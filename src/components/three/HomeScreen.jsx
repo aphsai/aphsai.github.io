@@ -38,8 +38,8 @@ export default class HomeScreen extends Component {
         const num_planes = 8;
         const plane_radius = -10;
         //const planes = [];
-        //const colors = [ 0x7b3e19, 0xb29b84, 0xf5e5fc, 0x8ae1fc ];
-        const colors = [  0x333333, 0x666666, 0x888888, 0xCCCCCC ];
+        const colors = [ 0x7b3e19, 0xFFC759, 0xFF7B9C, 0x607196 ];
+        //const colors = [  0x333333, 0x666666, 0x888888, 0xCCCCCC ];
         const background_color = 0x171717;
 
         this.camera_radius = 5;

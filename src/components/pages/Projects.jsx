@@ -7,6 +7,7 @@ import tetris from "../../assets/projects/tetris-multiplayer.png"
 import competitive from "../../assets/projects/competitive.png"
 import puppr from "../../assets/projects/puppr.png"
 import clown from "../../assets/projects/clown.png"
+import charitychain from "../../assets/projects/charitychain.png"
 
 import './Projects.css'
 
@@ -19,6 +20,20 @@ const projects =
             description: "a game written in c++ with a custom engine. implemented using an entity component system and compositional data model.",
             tags: ['sdl2', 'c++']
         }, 
+        {
+            src: clown,
+            title: "clown",
+            url: "clown",
+            description: "a toy game engine written using c++, vulkan libraries and glfw",
+            tags: ['c++', 'glsl', 'vulkan', 'glfw']
+        },
+        {
+            src: charitychain,
+            title: "charity_chain",
+            url: "charity_chain",
+            description: "tracking charity spendings on blockchain to help users make more informed donations and to increase transparency of charities; enables users to trace exactly what their donation is spent on",
+            tags: ['firebase', 'react', 'ethereum', 'solidity']
+        },
         {
             src: raycaster,
             title: "raycaster",
@@ -60,20 +75,6 @@ const projects =
             url: "chip8",
             description: " i wanted to get a better lower level understanding on how things like this operate.",
             tags: ['c++', 'sdl2']
-        },
-        {
-            src: clown,
-            title: "clown",
-            url: "clown",
-            description: "a toy game engine written using c++, vulkan libraries and glfw",
-            tags: ['c++', 'glsl', 'vulkan', 'glfw']
-        },
-        {
-            src: "",
-            title: "",
-            url: "",
-            description: "",
-            tags: []
         }
     ];
 
@@ -82,7 +83,6 @@ export default class Projects extends Component {
     render() {
         return (
             <div id="projects" className="container">
-                <div id="projects-content"> </div>
                     {
                         projects.map((project) => {
                             return (
