@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
 import profile_picture  from '../../assets/profile/profile_picture.png'
+import { CSSTransition } from 'react-transition-group';
 import './About.css'
 
 export default class About extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { in : false };
+    }
+
+    componentDidMount() {
+        this.setState({
+            in: true
+        });
+    }
+
     render() {
         return (
+            <CSSTransition in={ this.state.in } timeout={ 200 } classNames="fade">
             <div id="about" className="container">
                 <div id="profile-picture-container">
                     <img id="profile-picture" src={ profile_picture } /> 
@@ -22,7 +36,8 @@ export default class About extends Component {
                     <br />
                     <p> if you'd like to learn more about me, you can always visit my <span className="underline"><a href="https://github.com/aphsai">github</a></span>. </p>
                 </div>
-            </div>
+                    </div>
+            </CSSTransition>
         );
     }
 }

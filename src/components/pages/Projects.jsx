@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import wasabi from "../../assets/projects/wasabi_sdl.png"
 import raycaster from "../../assets/projects/raycaster.png"
 import thea from "../../assets/projects/thea.png"
@@ -80,13 +81,26 @@ const projects =
 
 
 export default class Projects extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { in : false };
+    }
+
+    componentDidMount() {
+        this.setState({
+            in: true
+        });
+    }
+
     render() {
         return (
             <div id="projects" className="container">
-                    {
-                        projects.map((project) => {
+                {
+                    projects.map((project) => {
                             return (
-                                <div className={ project.src ? "project" : "project hidden" }> 
+                                <CSSTransition in={ this.state.in } timeout={ 200 } classNames="fade" key={project.src}>
+                                <div className={ project.src ? "project" : "project hidden" } > 
                                     <a href={ "https://github.com/aphsai/" + project.url } ><img src={ project.src } /></a>
                                     <div className="project-body">
                                         <div className="project-title">
@@ -100,13 +114,14 @@ export default class Projects extends Component {
                                         <ul>
                                             { 
                                                 project.tags.map((tag) => {
-                                                    return <li> { tag } </li>
+                                                    return <li  key={project.src + tag}> { tag } </li>
                                                 })
 
                                             }
                                         </ul>
                                     </div>
                                 </div>
+                                </CSSTransition>
                             );
                         })
                     }

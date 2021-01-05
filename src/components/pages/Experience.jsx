@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import './Experience.css';
 
 
@@ -46,12 +47,25 @@ const experiences = [
 ]
 
 export default class Experience extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { in : false };
+    }
+
+    componentDidMount() {
+        this.setState({
+            in: true
+        });
+    }
+
     render() {
         return (
+            <CSSTransition in={ this.state.in } timeout={ 200 } classNames="fade">
             <div id="experience" className="container">
                 {
                     experiences.map((experience) => {
-                        return <div className="company"> 
+                        return <div className="company" key={experience.date}> 
                             <div className="company-header">
                                 <div className="company-name"> { experience.name } | { experience.position } </div> 
                                 <div className="company-date"> { experience.date } </div>
@@ -69,6 +83,7 @@ export default class Experience extends Component {
                     })
                 }
             </div>
+            </CSSTransition>
         );
     }
 }
