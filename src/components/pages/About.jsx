@@ -7,7 +7,9 @@ export default class About extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { in : false };
+        this.state = { 
+            in : false,
+        };
     }
 
     componentDidMount() {

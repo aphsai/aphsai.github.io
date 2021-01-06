@@ -84,7 +84,9 @@ export default class Projects extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { in : false };
+        this.state = { 
+            in : false
+        };
     }
 
     componentDidMount() {
@@ -97,11 +99,11 @@ export default class Projects extends Component {
         return (
             <div id="projects" className="container">
                 {
-                    projects.map((project) => {
+                    projects.map((project, index) => {
                             return (
                                 <CSSTransition in={ this.state.in } timeout={ 200 } classNames="fade" key={project.src}>
                                 <div className={ project.src ? "project" : "project hidden" } > 
-                                    <a href={ "https://github.com/aphsai/" + project.url } ><img src={ project.src } /></a>
+                                    <a href={ "https://github.com/aphsai/" + project.url } ><img src={ project.src } /> </a>
                                     <div className="project-body">
                                         <div className="project-title">
                                             <h4> { project.title } </h4>
