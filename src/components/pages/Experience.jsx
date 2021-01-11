@@ -9,9 +9,9 @@ const experiences = [
         position: "software developer",
         date: "sep. 2020 - dec. 2020",
         work: [
-            "constructed api to automate jupyter notebook execution by parameterizing inputs and outputs, as well as synchronize data with s3 buckets",
-            "developed several onboarding enhancements such as location-based signup, customizeable surveys and push notifications along with emails",
-            "revamped workflow for experimental recipes to allow for extensibility and increased clarity"
+            "constructed api to automate jupyter notebook execution and automatically version with s3 buckets, reducing ml platform latency by 17%",
+            "developed several onboarding enhancements such as location-based signup, customizeable surveys and push notifications along with emails decreasing time to join by ~35% and increasing user interaction by 7%",
+            "revamped workflow for experimental recipes to allow for extensibility and increased testing throughput by ~15%"
         ]
     },
     {
@@ -20,7 +20,7 @@ const experiences = [
         date: "jan. 2020 - may 2020",
         work: [
             "architected machine learning platform and analysed waste reduction in order to optimize weekly inventory",
-            "increased user interaction and retention by ~6 through implementation of referral program and recipe categorizations",
+            "increased user interaction and retention by ~6% through implementation of referral program and recipe categorizations",
             "created a multi-processed repository of features with a built-in scheduler and ui to keep data up-to-date and easy to access"
         ]
     },
