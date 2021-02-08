@@ -9,7 +9,7 @@ const experiences = [
         position: "software developer",
         date: "sep. 2020 - dec. 2020",
         work: [
-            "constructed api to automate jupyter notebook execution and automatically version with s3 buckets, reducing ml platform latency by 17%",
+            "developed service to automate jupyter notebook execution and automatically version with s3 buckets, reducing ml platform latency by 17%",
             "developed several onboarding enhancements such as location-based signup, customizeable surveys and push notifications along with emails decreasing time to join by ~35% and increasing user interaction by 7%",
             "revamped workflow for experimental recipes to allow for extensibility and increased testing throughput by ~15%"
         ]
