@@ -9,9 +9,10 @@ const experiences = [
         position: "software developer",
         date: "sep. 2020 - dec. 2020",
         work: [
-            "developed service to automate jupyter notebook execution and automatically version with s3 buckets, reducing ml platform latency by 17%",
-            "developed several onboarding enhancements such as location-based signup, customizeable surveys and push notifications along with emails decreasing time to join by ~35% and increasing user interaction by 7%",
-            "revamped workflow for experimental recipes to allow for extensibility and increased testing throughput by ~15%"
+
+            "developed service to automate jupyter notebook execution and automatically backup and version using s3 buckets, reducing ml platform latency by 17%",
+            "implemented several enhancements such as location-based signup, customizeable surveys and push notifications heavily simplifying onboarding",
+            "designed and created experimental recipes workflow by automating a/b testing, data aggregation and analysis for different workplaces"
         ]
     },
     {
@@ -41,7 +42,7 @@ const experiences = [
         work: [
             "created data visualization module and introduced caching to minimize loading times",
             "implemented authentication cookies for oauth to bypass react native webview limitations",
-            "optimized core product by revamping libraries and streamlining codebase, increasing efficiency and decreasing load times by ~10%"
+            "optimized core product by revamping libraries and streamlining codebase, increasing efficiency and decreasing load times by ~4%"
         ]
     }
 ]
