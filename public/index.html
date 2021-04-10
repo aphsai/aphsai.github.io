@@ -8,6 +8,22 @@
     <title>Saksham Aggarwal</title>
   </head>
   <body>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.3.3/firebase-analytics.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyC1RY0GNxJN2RS8Pc_dvqnD0jSZBz2bdRc",
+        authDomain: "aphsai-website.firebaseapp.com",
+        projectId: "aphsai-website",
+        storageBucket: "aphsai-website.appspot.com",
+        messagingSenderId: "385347740064",
+        appId: "1:385347740064:web:a04cc3aebcdb8c6abb84c5",
+        measurementId: "G-KS5TQDHEG1"
+      };
+
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
     <div id="root"></div>
   </body>
 </html>
