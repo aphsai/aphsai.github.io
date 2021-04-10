@@ -19,16 +19,24 @@ export default class HomeScreen extends Component {
     constructor(props) {
         super(props);
         document.addEventListener('mousemove', this._onMouseMove);
+        document.addEventListener('touchmove', this._onTouchMove);
         window.addEventListener('resize', this.onWindowResize);
+    }
+    
+    _mouseEvent = (x, y) => {
+        if (this.props.transition === TRANSITION.CENTER) {
+            this.horizontal_angle = Math.PI + (x / window.innerWidth) * (2 * Math.PI);
+            this.vertical_angle = Math.PI / 2 + (y / window.innerHeight) * (Math.PI / 1.5);
+            this.target_position = new THREE.Vector3(Math.sin(this.horizontal_angle) * this.camera_radius, Math.sin(this.vertical_angle), Math.cos(this.horizontal_angle) * this.camera_radius);
+        } 
     }
 
     _onMouseMove = (e) => {
+        this._mouseEvent(e.clientX, e.clientY);
+    }
 
-        if (this.props.transition === TRANSITION.CENTER) {
-            this.horizontal_angle = Math.PI + (e.clientX / window.innerWidth) * (2 * Math.PI);
-            this.vertical_angle = Math.PI / 2 + (e.clientY / window.innerHeight) * (Math.PI / 1.5);
-            this.target_position = new THREE.Vector3(Math.sin(this.horizontal_angle) * this.camera_radius, Math.sin(this.vertical_angle), Math.cos(this.horizontal_angle) * this.camera_radius);
-        } 
+    _onTouchMove = (e) => {
+        this._mouseEvent(e.touches[0].clientX, e.touches[0].clientY);
     }
 
     componentDidMount() {
@@ -201,6 +209,7 @@ export default class HomeScreen extends Component {
 
     componentWillUnmount() {
         document.removeEventListener('mousemove', this._onMouseMove);
+        document.removeEventListener('touchmove', this._onMouseMove);
         window.removeEventListener('resize', this.onWindowResize);
         this.stop();
     }
