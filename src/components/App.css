@@ -246,4 +246,8 @@ ul#navbar #navbar_selected {
         margin: 5px 0;
     }
 
+    #main-overlay {
+        padding: 0px;
+    }
+
 }

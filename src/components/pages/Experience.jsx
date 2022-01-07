@@ -5,11 +5,20 @@ import './Experience.css';
 
 const experiences = [
     {
+        name: "thumbtack",
+        position: "software developer",
+        date: "sep. 2021 - dec. 2021",
+        work: [
+            "wrote backend resolvers and graphql schemas to handle membership activations, cancellations and renewals",
+            "created kafka consumers and producers to automatically send users emails on membership changes",
+            "architected infrastructure to handle promotions that avoid detection from scraping extensions for third-party distributors"
+        ]
+    },
+    {
         name: "kitchenmate",
         position: "software developer",
         date: "sep. 2020 - dec. 2020",
         work: [
-
             "developed service to automate jupyter notebook execution and automatically backup and version using s3 buckets, reducing ml platform latency by 17%",
             "implemented several enhancements such as location-based signup, customizeable surveys and push notifications heavily simplifying onboarding",
             "designed and created experimental recipes workflow by automating a/b testing, data aggregation and analysis for different workplaces"
