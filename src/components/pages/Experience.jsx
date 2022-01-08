@@ -71,11 +71,11 @@ export default class Experience extends Component {
 
     render() {
         return (
-            <CSSTransition in={ this.state.in } timeout={ 200 } classNames="fade">
             <div id="experience" className="container">
                 {
                     experiences.map((experience) => {
-                        return <div className="company" key={experience.date}> 
+                        return <CSSTransition in={ this.state.in } timeout={ 200 } classNames="fade">
+                            <div className="company" key={experience.date}> 
                             <div className="company-header">
                                 <div className="company-name"> { experience.name } | { experience.position } </div> 
                                 <div className="company-date"> { experience.date } </div>
@@ -89,11 +89,11 @@ export default class Experience extends Component {
                                      }
                                     </ul>
                                 </div>
-                        </div>
+                            </div>
+                        </CSSTransition>
                     })
                 }
             </div>
-            </CSSTransition>
         );
     }
 }
