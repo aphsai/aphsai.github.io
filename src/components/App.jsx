@@ -7,6 +7,7 @@ import HomeScreen from './three/HomeScreen'
 import About from './pages/About'
 import Projects from './pages/Projects'
 import Experience from './pages/Experience'
+import Blog from './pages/Blog'
 import resume from '../assets/resume/resume.pdf'
 import './App.css'
 
@@ -89,7 +90,7 @@ export default class App extends Component {
                     content = <Projects />
                 break;
                 case NAVBAR.BLOG:
-                    content = <div />
+                    content = <Blog />
                 break;
                 default:
                     content = ""
