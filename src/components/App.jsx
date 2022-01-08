@@ -44,6 +44,8 @@ export default class App extends Component {
         } else if (text === NAVBAR.HOME) {
             transition = TRANSITION.CENTER;
             display_content = true;
+        } else if (text == NAVBAR.BLOG) {
+            transition = TRANSITION.BEHIND;
         }
 
         this.setState({
@@ -85,6 +87,9 @@ export default class App extends Component {
                 break;
                 case NAVBAR.PROJECTS:
                     content = <Projects />
+                break;
+                case NAVBAR.BLOG:
+                    content = <div />
                 break;
                 default:
                     content = ""

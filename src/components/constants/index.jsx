@@ -3,6 +3,7 @@ export const NAVBAR = {
     ABOUT: "about",
     PROJECTS: "projects",
     EXPERIENCE: "experience",
+    BLOG: "blog",
 };
 
 export const TRANSITION = {
@@ -10,5 +11,6 @@ export const TRANSITION = {
     LEFT: "left",
     RIGHT: "right",
     DOWN: "down",
-    CENTER: "center"
+    CENTER: "center",
+    BEHIND: "behind",
 }
