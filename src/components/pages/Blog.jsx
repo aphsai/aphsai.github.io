@@ -9,7 +9,7 @@ const posts = [
         title: 'the encroaching loneliness',
         date: 'january 7th, 2022'
     },
-]
+];
 
 export default class Blog extends Component {
 
