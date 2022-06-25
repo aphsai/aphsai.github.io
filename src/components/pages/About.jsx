@@ -37,6 +37,7 @@ export default class About extends Component {
                     <p> i've been binge writing various raytracers to shaders and learning as much as i can about the graphics pipeline. </p>
                     <br />
                     <p> if you'd like to learn more about me, you can always visit my <span className="underline"><a href="https://github.com/aphsai">github</a></span>. </p>
+                    <p> or email me at aphsai.c@gmail.com </p>
                 </div>
                     </div>
             </CSSTransition>
