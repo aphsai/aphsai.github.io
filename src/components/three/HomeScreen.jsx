@@ -106,8 +106,8 @@ export default class HomeScreen extends Component {
         const dot_screen_shader = new ShaderPass(DotScreenShader);
         dot_screen_shader.uniforms['scale'].value = 10;
 
-        const rgb_shift_shader = new ShaderPass(RGBShiftShader);
-        rgb_shift_shader.uniforms['amount'].value = 0.005;
+        this.rgb_shift_shader = new ShaderPass(RGBShiftShader);
+        this.rgb_shift_shader.uniforms['amount'].value = 0.005;
 
         const bloom_pass =  new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
         bloom_pass.threshold = 0.2;
@@ -181,6 +181,9 @@ export default class HomeScreen extends Component {
             this.camera.lookAt(0, 1, 0);
 
             let is_close = this.isClose(this.camera.position, this.target_position);
+            if (is_close) {
+                this.composer.removePass(this.rgb_shift_shader);
+            }
 
             if (this.props.transition !== TRANSITION.CENTER) {
                 if (is_close && !this.props.display_content) {
@@ -188,6 +191,7 @@ export default class HomeScreen extends Component {
                 }
             }
         }
+
         this.frameId = window.requestAnimationFrame(this.animate);
         this.composer.render();
     }
@@ -207,6 +211,7 @@ export default class HomeScreen extends Component {
 
     componentDidUpdate = () => {
         this.lerp_speed = 0.03;
+        this.composer.addPass(this.rgb_shift_shader);
         if (this.props.transition === TRANSITION.LEFT) {
             this.target_position = new THREE.Vector3(-12, 2.5, this.camera_radius - 3);
         } else if (this.props.transition === TRANSITION.CENTER) {
